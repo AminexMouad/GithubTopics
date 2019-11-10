@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/style.css">
+  <title><%= pageTitle %> </title>
+</head>
+
+<body>
+  <h1><%= pageTitle %> </h1>
+  <form action="/topic" method="POST">
+    <input type="text" name="motcle" placeholder="React native">
+    <input type="submit" value="Chercher">
+  </form>
+  <hr>
+  <% if (datas!==undefined) { %>
+  <table border="2">
+    <thead>
+      <th>Topic Name</th>
+      <th>Topic Description</th>
+      <th>Link</th>
+    </thead>
+    <tbody>
+      <% for(let item of datas) { %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.short_description %></td>
+        <td><a href="http://www.github.com/topic/<%= item.name %>" target="_blank">Click Here </a></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <ul>
+
+  </ul>
+  <% } %>
+
+</body>
+
+</html>
