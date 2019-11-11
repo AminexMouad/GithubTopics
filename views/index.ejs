@@ -21,7 +21,8 @@
     <thead>
       <th>Topic Name</th>
       <th>Topic Description</th>
-      <th>Link</th>
+      <th>Topic Link</th>
+      <th>Show all related tweets</th>
     </thead>
     <tbody>
       <% for(let item of datas) { %>
@@ -29,6 +30,7 @@
         <td><%= item.name %></td>
         <td><%= item.short_description %></td>
         <td><a href="http://www.github.com/topic/<%= item.name %>" target="_blank">Click Here </a></td>
+        <td><a href="http://localhost:5000/tweet?tw=<%= item.name %>">Click Here </a></td>
       </tr>
       <% } %>
     </tbody>

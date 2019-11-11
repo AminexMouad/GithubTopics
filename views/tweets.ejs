@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/style.css">
+  <title><%= keyword %> Tweets </title>
+</head>
+
+<body>
+  <h1><%= keyword %> Tweets </h1>
+  <hr>
+  <% if (datas!==undefined) { %>
+  <table border="2">
+    <thead>
+      <th>tweet owner</th>
+      <th>tweet Description</th>
+      <th>Tweet link</th>
+    </thead>
+    <tbody>
+      <% for(let item of datas) { %>
+      <tr>
+        <td><%= item.user.name %></td>
+        <td><%= item.text %></td>
+        <td><a href="http://www.twitter.com/<%= item.user.screen_name %>/status/<%= item.id_str %>"
+            target="_blank">Click
+            here</a>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <ul>
+
+  </ul>
+  <% } %>
+
+</body>
+
+</html>
